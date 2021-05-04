@@ -20,7 +20,7 @@ namespace MedicineRepresentativeSchedule.Provider
                 using(HttpClient Client=new HttpClient())
                 {
                     _log.Info("Calling Medicine Stock Api");
-                    var Response = await Client.GetAsync("https://localhost:5001/api/MedicineStockInformation");
+                    var Response = await Client.GetAsync("https://medicinestock.azurewebsites.net/api/MedicineStockInformation");
                     if (Response.IsSuccessStatusCode)
                     {
                         var ApiResponse =await Response.Content.ReadAsStringAsync();
